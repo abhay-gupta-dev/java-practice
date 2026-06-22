@@ -4,14 +4,14 @@ public class mergesort{
             return;
 
         }
-        if(low<high){
+        
             int mid=low+(high-low)/2;
             mergeSort(str,low,mid);
             mergeSort(str,mid+1,high);
             merge(str,low,mid,high);
         }
 
-    }
+    
     public static void merge(String str[],int low,int mid,int high){
         String temp[]=new String[high-low+1];
         int i=low,j=mid+1,k=0;
