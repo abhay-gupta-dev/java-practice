@@ -22,7 +22,7 @@ public class practice15{
         
     }
     public static void main(String[] args){
-        String str="abc";
+        String str="aaaa";
         HashSet<String>set=new HashSet<>();
         subSequences(str,0,"",set);
 
