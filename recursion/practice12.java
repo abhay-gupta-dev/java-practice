@@ -1,4 +1,5 @@
 public class practice12{
+    //finding first and last occurances
     public static int first=-1;
     public static int last=-1;
     public static void findOccurances(String str,int idx,char element){
