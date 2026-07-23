@@ -1,4 +1,5 @@
-public class code4{
+//finding only one solution of n queens problem
+public class code5{
     static int count=0;
     public static boolean issafe(char board[][],int row,int col){
         //vertical up
@@ -22,23 +23,26 @@ public class code4{
         return true;
 
     }
-    public static void nqueens(char board[][],int row){
+    public static boolean nqueens(char board[][],int row){
   //base case
          if(row==board.length){
-            printboard(board);
+            // printboard(board);
             count++;
-            return;
+            return true;
 
          }
         // recursion for every column in that row
         for(int j=0;j<board.length;j++){
             if(issafe(board,row,j)){
                 board[row][j]='Q';
-                nqueens(board,row+1);
+             if( nqueens(board,row+1)){
+                return true;
+             }
                 board[row][j]='x';//backtracking
             }
 
         }
+        return false;
 
     }
     public static void printboard(char board[][]){
@@ -62,7 +66,12 @@ public class code4{
             
         }
       
-        nqueens(board,0);
+      if(  nqueens(board,0)){
+        System.out.println("solution is possible");
+        printboard(board);
+      }else{
+        System.out.println("solution is not possible");
+      }
         System.out.println("total ways to solve n queens problem: "+count);
 
 
