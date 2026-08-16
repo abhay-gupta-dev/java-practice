@@ -12,6 +12,7 @@ public class code9 {
 
         sol[x][y] = 1;
 
+        //base case: if we reach the destination cell, print the solution and return true
         if (x == n - 1 && y == n - 1) {
             printsol(sol, n);
            
@@ -51,8 +52,8 @@ public class code9 {
 
         int maze[][] = {
                 {1, 1, 1},
-                {1, 1, 1},
-                {1, 1, 1}
+                {1, 1, 0},
+                {0, 1, 1}
         };
 
         int n = maze.length;
