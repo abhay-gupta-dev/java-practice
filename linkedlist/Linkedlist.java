@@ -170,18 +170,21 @@ public class Linkedlist{
         ll.addLast(3);
         ll.addMiddle(4,2);
         ll.print();
+          ll.addMiddle(8,1);
+             ll.print();
+
 
         // ll.removeFirst();
         // ll.print();
         //  ll.removeLast();
         // ll.print();
 
-         head= ll.reverserecursive(head);
-        ll.print();
+        //  head= ll.reverserecursive(head);
+        // ll.print();
        
-        System.out.println(size);
-        System.out.println(ll.recsearch(4));
-        System.out.println(ll.recsearch(10));
+        // System.out.println(size);
+        // System.out.println(ll.recsearch(4));
+        // System.out.println(ll.recsearch(10));
        
 
         
