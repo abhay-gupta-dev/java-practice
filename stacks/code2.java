@@ -22,6 +22,7 @@ public class code2 {
    s.push(top);
 
     }
+  
     public static void main(String[] args){
         Stack<Integer>s=new Stack<>();
         s.push(1);

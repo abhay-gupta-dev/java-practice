@@ -20,7 +20,7 @@ public class code5 {
 
     }
     public static void main(String[] args){
-        int stock[]={100,80,60,70,60,75,85};
+        int stock[]={100,80,60,70,60,75,85}e;
         int span[]=new int[stock.length];
         stockspan(stock, span);
         for(int i=0;i<span.length;i++){

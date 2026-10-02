@@ -68,6 +68,7 @@ public class code1{
             return head.data;
         }
     }
+    
     public static void main (String args[]){
         // StackA s=new StackA();
       //  StackB s=new StackB();

@@ -1,5 +1,6 @@
 import java.util.*;
 public class code8 {
+    //this is the code for duplicate parenthesis problem
     public static boolean duplicateParenthesis(String str){
         Stack<Character>s=new Stack<>();
         for(int i=0;i<str.length();i++){
@@ -11,7 +12,7 @@ public class code8 {
                     s.pop();
                     count++;
                 }
-                if(count<1){
+                if(count<1){ //duplicate found      duplicate parenthesis means-> that the operand and operator is not coming in the parethesis
                     return true;
                    
                 }else{
