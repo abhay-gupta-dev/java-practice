@@ -103,7 +103,43 @@ public class Binary_tree{
           return tsum;
 
         }
+        public static int diameter2(Node root){
+          if(root==null){
+            return 0;
+          }
+          //ld=left diameter
+          //lh=left height
+          //rd=right diameter
+          //rh=right height
+          int ld=diameter2(root.left);
+          int lh=height(root.left);
+          int rd=diameter2(root.right);
+          int rh=height(root.right);
+          int selfDiameter=lh+rh+1;
+          return Math.max(selfDiameter,Math.max(ld,rd));
+        }
     }
+    static class Info{
+      int diam; //diameter
+      int heig;//height
+
+      //constructor
+      public Info(int diam,int heig){
+        this.diam=diam;
+        this.heig=heig;
+      }
+      public static Info diameter(Node root){
+        if(root==null){
+          return new Info(0,0);
+        }
+        Info linfo=diameter(root.left);
+        Info rinfo=diameter(root.right);
+        int diam=Math.max(Math.max(linfo.diam,rinfo.diam),linfo.heig+rinfo.heig+1);
+        int heig=Math.max(linfo.heig,rinfo.heig)+1;
+        return new Info(diam,heig);
+      }
+    }
+
     public static void main(String args[]){
       int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
       BinaryTree tree=new BinaryTree();
@@ -115,7 +151,11 @@ public class Binary_tree{
       System.out.println("height of tree is: "+tree.height(root));
       System.out.println("the total count of nodes are: "+tree.countofnodes(root));
       System.out.println("the sum of all nodes: "+tree.sumofnodesdata(root));
-    
+      System.out.println("the maximum diameter of tree is "+tree.diameter2(root));
+      
+    Info Optimized=Info.diameter(root);
+    System.out.println("the optimized approache gives the same diameter as: "+Optimized.diam);
+        System.out.println("the optimized approache gives the same height as: "+Optimized.heig);
 
     }
 }
